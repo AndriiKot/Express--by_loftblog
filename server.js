@@ -28,6 +28,12 @@ app.get("/", (req, res) => {
   res.send("Hello Express testing!!!!");
 });
 
+app.get("/artists/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const artist = artists.find((a) => a.id === id);
+  res.send(artist);
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
