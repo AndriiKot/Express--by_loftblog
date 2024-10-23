@@ -20,12 +20,12 @@
     <tr>
       <td height=100 width=100>
         <a href=https://nodejs.org/en>
-          <img src=https://github.com/AndriiKot/___Icons__and__Links___/blob/main/icons/nodejs.svg alt=NodeJS>
+          <img src=https://github.com/AndriiKot/Express--by_loftblog/blob/main/icons/nodejs.svg alt=NodeJS>
         </a>
       </td>
       <td height=100 width=100>
         <a href=https://expressjs.com/>
-          <img src=https://github.com/AndriiKot/___Icons__and__Links___/blob/main/icons/express.svg alt=Express>
+          <img src=https://github.com/AndriiKot/Express--by_loftblog/blob/main/icons/express.svg alt=Express>
         </a>
       </td>
       <td height=100 width=100>
