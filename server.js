@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-const artists = [
+app.use(express.json());
+
+let artists = [
   {
     id: 1,
     name: "Metallica",
@@ -20,8 +22,10 @@ const artists = [
   },
 ];
 
+const findArtistById = (id) => artists.find((a) => a.id === id);
+
 app.get("/artists", (req, res) => {
-  res.send(artists);
+  res.json(artists);
 });
 
 app.get("/", (req, res) => {
@@ -30,8 +34,48 @@ app.get("/", (req, res) => {
 
 app.get("/artists/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const artist = artists.find((a) => a.id === id);
-  res.send(artist);
+  const artist = findArtistById(id);
+
+  if (!artist) {
+    return res.status(404).send({ message: "Artist not found" });
+  }
+
+  res.json(artist);
+});
+
+app.post("/artists", (req, res) => {
+  const artist = {
+    id: artists.length + 1,
+    name: req.body.name,
+    genre: req.body.genre,
+  };
+  artists.push(artist);
+  res.status(201).json(artist);
+});
+
+app.put("/artists/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const artist = findArtistById(id);
+
+  if (!artist) {
+    return res.status(404).send({ message: "Artist not found" });
+  }
+
+  artist.name = req.body.name;
+  artist.genre = req.body.genre;
+  res.status(200).json(artist);
+});
+
+app.delete("/artists/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const artist = findArtistById(id);
+
+  if (!artist) {
+    return res.status(404).send({ message: "Artist not found" });
+  }
+
+  artists = artists.filter((a) => a.id !== id);
+  res.status(204).send();
 });
 
 app.listen(port, () => {
