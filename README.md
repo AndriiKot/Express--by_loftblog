@@ -14,6 +14,7 @@
       <th height=33 width=100>NodeJS</th>
       <th height=33 width=100>Express</th>
       <th height=33 width=100>MongoDB</th>
+      <th height=33 width=100>HTTPie</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,12 @@
         <a href=https://www.mongodb.com/>
           <img src=https://github.com/AndriiKot/Express--by_loftblog/blob/main/icons/mongodb.svg alt=MongoDB>
         </a>
+      </td>
+      <td height=100 width=100>
+        <a href=https://httpie.io/>
+          <img src=https://github.com/AndriiKot/Express--by_loftblog/blob/main/icons/httpie.svg alt=HTTPie>
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
